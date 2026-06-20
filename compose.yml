@@ -1,0 +1,17 @@
+services:
+  vscode:
+    build:
+      context: .
+      args:
+        VSCODE_EXTENSIONS: "kilocode.kilo-code"
+    image: vscode-extpack:latest
+    container_name: vscode-extpack
+    cap_add:
+      - IPC_LOCK
+    environment:
+      - TZ=Etc/UTC
+    ports:
+      - 3000:3000
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
