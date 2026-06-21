@@ -18,3 +18,21 @@ RUN sudo -u abc /tmp/install-extensions.sh "${VSCODE_EXTENSIONS}"
 USER root
  
 RUN rm -f /tmp/install-extensions.sh
+
+USER root
+# ==== description ======
+# ENV OPENCODE_INSTALL_DIR=/usr/local/bin
+RUN curl -fsSL https://opencode.ai/install | bash
+RUN mv /config/.opencode/bin/opencode /usr/local/bin/opencode
+RUN chmod +x /usr/local/bin/opencode
+RUN rm -rf /config/.opencode
+
+
+USER abc
+RUN command
+RUN code --extensions-dir /tmp/extensions --install-extension sst-dev.opencode --force
+# RUN code --extensions-dir /tmp/extensions --install-extension sst-dev.opencode-v2 --force
+# ==== description ======
+
+USER root
+COPY autostart_wayland /defaults/autostart_wayland

@@ -1,0 +1,27 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "kilo-code.new.agentManagerOpen",
+        "kilo-code.new.agentManager.showTerminal"
+    ],
+    "kilo-code.new.agentWorkStyle": "skipped",
+    "workbench.colorTheme": "Quiet Light",
+    "window.zoomLevel": 1,
+    "editor.fontSize": 17,
+    "editor.lineHeight": 28,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "editor.hover.enabled": "off",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.location": "top",
+    "workbench.editor.wrapTabs": true,
+    "workbench.statusBar.visible": false,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.lineHeight": 1.35,
+    "kilo-code.new.showTaskTimeline": true
+}

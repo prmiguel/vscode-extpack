@@ -9,9 +9,15 @@ services:
     cap_add:
       - IPC_LOCK
     environment:
+      # - PUID=1000
+      # - PGID=1000
       - TZ=Etc/UTC
+      - VSCODE_ARGS=--extensions-dir /tmp/extensions --user-data-dir /tmp/vscodedata
+      # - VSCODE_ARGS=--extensions-dir /config/.vscode/extensions --user-data-dir /tmp/vscodedata1
     ports:
       - 3000:3000
       - 3001:3001
     shm_size: "1gb"
     restart: unless-stopped
+    volumes:
+      - ${HOME}/workspace:/workspace:rw
