@@ -32,7 +32,7 @@ printf '  - %s\n' "${EXTENSIONS[@]}"
 FAILED=()
 for ext in "${EXTENSIONS[@]}"; do
   echo "[install-extensions] Installing: ${ext}"
-  if ! sudo -u abc code --install-extension "${ext}" --force; then
+  if ! code --install-extension "${ext}" --force; then
     echo "[install-extensions] WARNING: failed to install ${ext}"
     FAILED+=("${ext}")
   fi

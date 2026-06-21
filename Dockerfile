@@ -6,14 +6,14 @@ ARG VSCODE_EXTENSIONS=""
 
 USER root
 RUN chown -R abc:abc /config
-COPY install-extensions.sh /tmp/install-extensions.sh
+COPY --chown=abc:abc install-extensions.sh /tmp/install-extensions.sh
 RUN chmod +x /tmp/install-extensions.sh
 
 # Extensions must be installed as the abc user (the one VS Code actually runs as),
 # not root, or they won't be picked up / will land with wrong ownership.
 USER abc
 
-RUN /tmp/install-extensions.sh "${VSCODE_EXTENSIONS}"
+RUN sudo -u abc /tmp/install-extensions.sh "${VSCODE_EXTENSIONS}"
  
 USER root
  
