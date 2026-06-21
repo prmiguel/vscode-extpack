@@ -35,4 +35,7 @@ RUN code --extensions-dir /tmp/extensions --install-extension sst-dev.opencode -
 # ==== description ======
 
 USER root
+RUN mkdir -p /tmp/vscodedata
+RUN chown -R 1000:1000 /tmp/vscodedata
+RUN chown -R 1000:1000 /tmp/extensions
 COPY autostart_wayland /defaults/autostart_wayland
